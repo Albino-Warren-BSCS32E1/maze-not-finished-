@@ -1,0 +1,213 @@
+html, body, #root {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+  box-sizing: content-box;
+}
+
+.TitleScreen {
+  background-image: url(../public/background.jpg);
+  //background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  overflow: auto;
+  &:focus {
+    outline: none;
+  }
+
+  @font-face {
+    font-family: 'ArcadeClassic';
+    src: url(../public/ARCADECLASSIC.TTF);
+  }
+
+  h1 {
+    font-family: 'ArcadeClassic';
+    font-size: 20rem;
+    margin-bottom: 20px;
+    color: rgb(10, 243, 212);
+  }
+
+  button {
+    font-family: 'ArcadeClassic';
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgb(107, 24, 155);
+    }
+  }
+}
+
+.level-indicator {
+
+  font-family: 'ArcadeClassic';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: rgb(10, 243, 212);;
+  font-size: 1.5rem;
+}
+
+.home-button {
+  font-family: 'ArcadeClassic';
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgb(107, 24, 155);
+  }
+}
+
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+
+.App {
+  background-image: url(../public/mazeBG.jpg);
+  //background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  overflow: auto; /* Enable scrolling inside the App container */
+  &:focus {
+    outline: none;
+  }
+}
+.setting {
+  align-self: flex-start;
+  padding: 5px 10px;
+
+  button {
+    font-size: 15px;
+  }
+
+  input {
+    font-size: 20px;
+  }
+}
+
+.topWall {
+  border-top: 4mm ridge #ffd319;
+}
+
+.rightWall {
+  border-right: 4mm ridge #ffd319;
+}
+
+.bottomWall {
+  border-bottom: 4mm ridge #ffd319;
+}
+
+.leftWall {
+  border-left: 4mm ridge #ffd319;
+}
+
+.sol {
+  div {
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    background: peachpuff;
+    display: inline-block;
+  }
+}
+
+.currentPosition {
+  div {
+    background-image: url(../public/CurrentPos.png);
+    background: salmon;
+    height: 80%;
+    width: 80%;
+    border-radius: 20%;
+    display: block;
+  }
+}
+
+.destination {
+  div {
+    background-image: url(../public/CurrentPos.png);
+    background: SpringGreen;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    display: block;
+  }
+}
+
+.currentPosition.destination {
+  div {
+    animation: rainbowBall 5s infinite;
+  }
+}
+
+@keyframes rainbowBall {
+  0%   {background-color: gold;}
+  15%  {background-color: coral;}
+  29%  {background-color: papayawhip;}
+  43%  {background-color: darkseagreen;}
+  57%  {background-color: lightcyan;}
+  71% {background-color: dodgerblue;}
+  84% {background-color: violet;}
+  100% {background-color: indigo;}
+}
+
+#maze {
+  margin-top: 15px;
+  border-collapse: collapse;
+  max-width: 80vw; /* Set a maximum width for the maze */
+  td {
+    height: 35px;
+    width: 35px;
+    max-width: 40px; /* Ensure each cell does not exceed its specified width */
+    
+  }
+}
+
+.info {
+  margin-top: 20px;
+  width: 100%;
+  background: cornsilk;
+  padding: 3px;
+  font-size: 20px;
+  p {
+    text-transform: uppercase;
+    color: forestgreen;
+  }
+}
+
